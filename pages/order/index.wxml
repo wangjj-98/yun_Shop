@@ -1,0 +1,15 @@
+<!-- pages/order/index.wxml -->
+<Tabs tabs="{{tabs}}" binditemChange="itemChange">
+  <block wx:if="{{tabs[0].isActive}}">
+    <view>{{type}}1</view>
+  </block>
+  <block wx:elif="{{tabs[1].isActive}}">
+    <view>{{type}}2</view>
+  </block>
+  <block wx:elif="{{tabs[2].isActive}}">
+    <view>{{type}}3</view>
+  </block>
+  <block wx:elif="{{tabs[3].isActive}}">
+    <view>{{type}}4</view>
+  </block>
+</Tabs>

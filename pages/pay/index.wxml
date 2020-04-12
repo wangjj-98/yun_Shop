@@ -1,0 +1,44 @@
+<!-- pages/pay/index.wxml -->
+<view class="revice_address_row">
+  <view class="address_info">
+    <view class="userName">
+      <text>收货人：{{address.userName}}</text>
+      <text>{{address.telNumber}}</text>
+    </view>
+    <view>
+      {{address.provinceName+''+address.cityName+''+address.countyName+''+address.detailInfo}}
+    </view>
+  </view>
+</view>
+<!-- 购物车内容 -->
+<view class="cart_content">
+  <view class="cart_item" wx:for="{{cart}}" wx:key="goods_id">
+    <!-- 商品图片 -->
+    <navigator class="cart_image">
+      <image mode="widthFix" src="{{item.goods_small_logo ? item.goods_small_logo:'http://image5.suning.cn/uimg/b2c/newcatentries/0000000000-000000000193373779_1_400x400.jpg'}}" />
+    </navigator>
+    <!-- 商品信息 -->
+    <view class="cart_info">
+      <view class="cart_goods_name">{{item.goods_name}}</view>
+      <view class="cart_goods_price">
+        <view class="goods_price">￥{{item.goods_price}}</view>
+        <view class="cart_num_tool">
+          <view class="num">x{{item.num}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 底部工具栏 -->
+<view class="footer_tool">
+  <!-- 总价格 -->
+  <view class="total_price_wrap">
+    <view class="total_price">
+      合计：
+      <text class="total_price_text">￥{{totalPrice}}</text>
+    </view>
+    <view class="total_bottom">包含运费</view>
+  </view>
+  <!-- 结算 -->
+  <view class="order_pay">支付({{totalNum}})</view>
+</view>
